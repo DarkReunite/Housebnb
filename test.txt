@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-runoob.com
-=======
-
->>>>>>> branch1
