@@ -1,8 +1,28 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+
+ header li.hub{
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  border-bottom: 2px solid white;
+}
+
+header li.hub:hover{
+  border-bottom: 2px solid rgb(86, 86, 86);
+}
+header li.hub button{
+  border:0;
+  outline: none;
+}
+
+header nav {
+  text-align: right;
+  border-bottom: 1px solid rgb(86, 86, 86);
 }

@@ -3,17 +3,19 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/javascripts/main.js")
   body
     header
       nav
         -
           var header_nav = [
-            {id:'发布房源',link:'/'},
-            {id:'注册',link:'/'},
-            {id:'登陆',link:'/'}
+            {id:'发布房源',link:'/',onclick:'show()'},
+            {id:'注册',link:'/',onclick:'show()'},
+            {id:'登陆',link:'/',onclick:'show()'}
           ]
         ul
-          each item in header_nav
-            li
-              a(href=item.link) #{item.id}
+        each item in header_nav
+          li.hub
+            button(onclick=item.onclick) #{item.id}
+              
     block content
