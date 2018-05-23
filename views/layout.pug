@@ -12,9 +12,9 @@ html
           {name:"注册",link:'/',onclick:'show()'},
           {name:"登陆",link:'/',onclick:'show()'}
         ]
-      ul
-        each item in header
-          button(onclick=item.onclick) #{item.name}
+    
+      each item in header
+        button(onclick=item.onclick) #{item.name}
     block content
       .model#id01
         span.close(onclick='hide()') ×
