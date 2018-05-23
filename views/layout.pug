@@ -15,10 +15,9 @@ html
         ]
       each item in header
         button(onclick=item.onclick) #{item.name}
-    block content
       .model#id01
         span.close(onclick='hide()') ×
-        form.model-content(action='/layout.pug')
+        form.model-content
           .register
             label
               b Email
@@ -32,9 +31,10 @@ html
             .clearfix
               button.cancelbtn Cancel
               button.signupbtn Sign Up
+    block content
       .content
         .content_inner
           span(class='title') Housebnb
-          .search
+          form.search(action='/home' method='get')
             input(type='search' placeholder='目的地、地址、城市')
             button(type='submit') 搜索

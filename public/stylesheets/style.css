@@ -125,7 +125,6 @@ header button{
 .model{
   display: none;
   position: fixed;
-  /* background-color: rgb(88, 88, 88); */
   background-color: rgba(36, 36, 36, 0.4);
   z-index: 1;
   left: 0;
@@ -186,6 +185,6 @@ input[type=text],input[type=password]{
   float: right;
 }
 .cancelbtn,.signupbtn{
-  /* float: left; */
+  float: left;
   width: 50%;
 }
