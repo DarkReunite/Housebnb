@@ -125,9 +125,6 @@ header button{
 .model{
   display: none;
   position: fixed;
-  /* 这里的注释是啥 */
-  /* 这个是github上的更改*/
-  /* background-color: rgb(88, 88, 88);  */
   background-color: rgba(36, 36, 36, 0.4);
   /* 这里是vs上的更改 */
   z-index: 1;
@@ -189,6 +186,6 @@ input[type=text],input[type=password]{
   float: right;
 }
 .cancelbtn,.signupbtn{
-  /* float: left; */
+  float: left;
   width: 50%;
 }
