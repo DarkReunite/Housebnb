@@ -125,6 +125,8 @@ header button{
 .model{
   display: none;
   position: fixed;
+  /* background-color: rgb(88, 88, 88); */
+  background-color: rgba(36, 36, 36, 0.4);
   z-index: 1;
   left: 0;
   top: 0;
