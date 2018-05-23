@@ -1,21 +1,40 @@
 doctype html
 html
   head
-    title= title
+    title=title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="/javascripts/main.js")
+    script(src='/javascripts/myJs.js')
   body
     header
-      nav
-        -
-          var header_nav = [
-            {id:'发布房源',link:'/',onclick:'show()'},
-            {id:'注册',link:'/',onclick:'show()'},
-            {id:'登陆',link:'/',onclick:'show()'}
-          ]
-        ul
-        each item in header_nav
-          li.hub
-            button(onclick=item.onclick) #{item.id}
-              
+      -
+        var header = [
+          {name:"发布房源",link:'/',onclick:'show()'},
+          {name:"注册",link:'/',onclick:'show()'},
+          {name:"登陆",link:'/',onclick:'show()'}
+        ]
+      ul
+        each item in header
+          button(onclick=item.onclick) #{item.name}
     block content
+      .model#id01
+        span.close(onclick='hide()') ×
+        form.model-content(action='/layout.pug')
+          .register
+            label
+              b Email
+            input(type='text' placeholder='Enter Email' name='email' required)
+            label
+              b Password
+            input(type='password' placeholder='Enter Password' name='psw' required)
+            label
+              b Repeat Password
+            input(type='password' placeholder='Repeat Password' name='psw-repeat' required)
+            .clearfix
+              button.cancelbtn Cancel
+              button.signupbtn Sign Up
+      .content
+        .content_inner
+          span(class='title') Housebnb
+          .search
+            input(type='search' placeholder='目的地、地址、城市')
+            button(type='submit') 搜索
