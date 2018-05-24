@@ -1,1 +1,11 @@
 extends layout.pug
+block content
+  .search-container
+    span(class='title') Housebnb
+    .search-content
+      form.search(action='/home' method='get')
+        .search-input
+          .search-input_01
+            input(type='search' placeholder='目的地、地址、城市')
+        .search-btn
+          button(type='submit') 搜索
