@@ -11,28 +11,41 @@ html
         -
           var header = [
             {name:"发布房源",link:'/',onclick:'show()'},
-            {name:"注册",link:'/',onclick:'show()'},
-            {name:"登录",link:'/',onclick:'show()'}
+            {name:"注册",link:'/',onclick:'showReg()'},
+            {name:"登录",link:'/',onclick:'showLog()'}
           ]
 
         each item in header
           button(onclick=item.onclick) #{item.name}
-      .RegLog#RegLogmodel
+      .RegLog#regModel
         span.close(onclick='hide()') ×
         form.model-content
           .register
             label(for="email")
-              b Email
-            input(type='text' placeholder='Enter Email' name='email' required)
+              b 邮箱
+            input(type='text' placeholder='请输入你的邮箱' name='email' required)
             label
-              b Password
-            input(type='password' placeholder='Enter Password' name='psw' required)
+              b 密码
+            input(type='password' placeholder='请输入你的密码' name='psw' required)
             label
-              b Repeat Password
-            input(type='password' placeholder='Repeat Password' name='psw-repeat' required)
+              b 确认密码
+            input(type='password' placeholder='重复输入密码' name='psw-repeat' required)
             .clearfix
-              button.cancelbtn Cancel
-              button.signupbtn Sign Up
+              button.cancelbtn 取消
+              button.signupbtn 注册
+      .RegLog#logModel
+        span.close(onclick='hide()') ×
+        form.model-content
+          .login
+            label(for="email")
+              b 邮箱
+            input(type='text' placeholder='请输入你的邮箱' name='email' required)
+            label
+              b 密码
+            input(type='password' placeholder='请输入你的密码' name='psw' required)
+            .clearfix
+              button.cancelbtn 取消
+              button.signupbtn 登录
     block content
       .content
         .content_inner

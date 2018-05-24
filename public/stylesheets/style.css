@@ -1,7 +1,7 @@
 * {
 	margin: 0px;
   padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 100% "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 header{
@@ -19,7 +19,7 @@ header nav button{
   border: none;
 	position: relative;
 	padding: 30px;
-	font-size: 14px;
+	font-size: 0.875em;
 	transition: 0.2s all ease;
   cursor: pointer;
   outline: none;
@@ -59,7 +59,7 @@ header nav button:hover ~ button::before{
 	margin: auto;
 }
 .title{
-	font-size: 48px;
+	font-size: 3em;
 	color: #ff5a5f;
 	font-weight: 700;
 }
@@ -139,7 +139,7 @@ header .close{
   right: 35px;
   top: 15px;
   color: black;
-  font-size: 40px;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
@@ -154,10 +154,10 @@ header .model-content{
   background-color: #fefefe;
   margin:  5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 50%;
+  width: 40%;
 }
 
-header .register{
+header .register,header .login{
   padding: 16px;
 }
 
