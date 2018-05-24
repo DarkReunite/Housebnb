@@ -3,6 +3,7 @@
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
 header{
 	display: flex;
 	width: 100%;
@@ -11,11 +12,8 @@ header{
 	align-items: center;
 	border-bottom: solid 1px rgb(175, 175, 175);
 }
-header ul{
-	display: flex;
-}
 
-header button{
+header nav button{
   display: inline-block;
 	position: relative;
 	padding: 30px;
@@ -25,7 +23,7 @@ header button{
   cursor: pointer;
   outline: none;
 }
-header button::before{
+header nav button::before{
   content:'';
   display: inline-block;
   width: 0;
@@ -37,13 +35,14 @@ header button::before{
   border-bottom: 2px solid #000;
   transition: 0.2s all linear;
 }
-header button:hover::before{
+header nav button:hover::before{
   width: 100%;
   top: 0;
   left: 0;
   transition-delay: 0.1s;
 }
-header button:hover ~ button::before{
+
+header nav button:hover ~ nav button::before{
   left: 0;
 }
 
@@ -118,33 +117,50 @@ input[type=search]{
   width: 200px;
   height: 200px;
 }
-header button{
-  border: none;
-  background-color: #fff;
-}
-.model{
+
+
+/* 注册的整个div样式 */
+header .RegLog{
   display: none;
   position: fixed;
-  background-color: rgba(36, 36, 36, 0.4);
-  /* 这里是vs上的更改 */
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
   padding-top: 60px;
 }
-.model-content{
-  background-color: #fefefe;
-  margin: 5% auto 15% auto;
-  border: 1px solid #888;
-  width: 80%;
+
+header .close{
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
 }
-.register{
+
+
+header .close:hover, header.close:focus{
+  color: red;
+  cursor: pointer;
+}
+
+/* 弹出的注册框样式 */
+header .model-content{
+  background-color: #fefefe;
+  margin:  5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%;
+}
+
+header .register{
   padding: 16px;
 }
-input[type=text],input[type=password]{
+
+header input[type=text], header input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -152,40 +168,40 @@ input[type=text],input[type=password]{
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-.close{
-  position: absolute;
-  right: 80px;
-  top: 80px;
-  color: #000;
-  font-size: 40px;
-  font-weight: bold;
-}
-.close:hover,.close:focus{
-  color: red;
+
+
+/* 设置注册每个按钮的样式 */
+header .RegLog button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0px;
+  border: none;
   cursor: pointer;
 }
-.clearfix::after{
-  content:'';
+
+header .cancelbtn, header .signupbtn {
+  float:left;
+  width:50%;
+}
+
+header .clearfix::after{
+  content: "";
   clear: both;
   display: table;
 }
-.clearfix button{
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+
+header button.cancelbtn{
+  background-color: red;
 }
-.cancelbtn{
-  background-color: #f44336;
-  float: left;
+
+@media screen and (max-width: 700px){
+  header .cancelbtn, header .signupbtn {
+    width: 100%;
+  }
 }
-.signupbtn{
-  background-color: #4CAF50;
-  float: right;
-}
-.cancelbtn,.signupbtn{
-  float: left;
-  width: 50%;
-}
+
+
+
+
+
