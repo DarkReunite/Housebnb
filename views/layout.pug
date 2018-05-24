@@ -2,24 +2,26 @@ doctype html
 html
   head
     title=title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/myJs.js')
+    script(src='/javascripts/main.js')
   body
     header
-      //- 这里是导航栏
-      -
-        var header = [
-          {name:"发布房源",link:'/',onclick:'show()'},
-          {name:"注册",link:'/',onclick:'show()'},
-          {name:"登陆",link:'/',onclick:'show()'}
-        ]
-      each item in header
-        button(onclick=item.onclick) #{item.name}
-      .model#id01
+      nav
+        -
+          var header = [
+            {name:"发布房源",link:'/',onclick:'show()'},
+            {name:"注册",link:'/',onclick:'show()'},
+            {name:"登陆",link:'/',onclick:'show()'}
+          ]
+
+        each item in header
+          button(onclick=item.onclick) #{item.name}
+      .RegLog#RegLogmodel
         span.close(onclick='hide()') ×
         form.model-content
           .register
-            label
+            label(for="email")
               b Email
             input(type='text' placeholder='Enter Email' name='email' required)
             label
