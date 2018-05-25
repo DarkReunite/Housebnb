@@ -48,7 +48,7 @@ header nav button:hover ~ button::before{
 }
 
 /* 注册的整个div样式 */
-header .RegLog{
+header .reglog{
   display: none;
   position: fixed;
   z-index: 1;
@@ -100,7 +100,7 @@ header input[type=text], header input[type=password] {
 
 
 /* 设置注册每个按钮的样式 */
-header .RegLog button {
+header .reglog button {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
