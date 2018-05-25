@@ -5,6 +5,9 @@ function showReg(){
 function showLog(){
   document.getElementById('logmodel').style.display='block';
 }
+function showMenu(){
+  document.getElementById('source').style.display='block'
+}
 
 function hide() {
   document.getElementById('regmodel').style.display="none";

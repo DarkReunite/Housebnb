@@ -4,19 +4,23 @@ block content
     .filter
       -
         var filter = [
-          {name:'入住-退房'},
-          {name:'房客'},
-          {name:'房源类型'},
-          {name:'价格'},
-          {name:'闪订'},
-          {name:'路程类型'},
-          {name:'位置区域'},
-          {name:'更多筛选条件'}
+          {name:'入住-退房',onclick:'showMenu()'},
+          {name:'房客',onclick:'showMenu()'},
+          {name:'房源类型',onclick:'showMenu()'},
+          {name:'价格',onclick:'showMenu()'},
+          {name:'闪订',onclick:'showMenu()'},
+          {name:'路程类型',onclick:'showMenu()'},
+          {name:'位置区域',onclick:'showMenu()'},
+          {name:'更多筛选条件',onclick:'showMenu()'}
         ]
-      ul
-        each item in filter
-          li
-            button #{item.name}
+      each item in filter
+        .nav
+          button(onclick=item.onclick) #{item.name}
+          //- 房源菜单测试
+        //- .menu#source
+        //-   button 一室一厅
+        //-   button 两室一厅
+        //-   button 两室两厅
     .main
       .source
         img(src='/images/pic.jpg')
