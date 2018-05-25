@@ -124,10 +124,6 @@ header button.cancelbtn{
   background-color: red;
 }
 
-.container{
-  padding: 20px 40px;
-}
-
 .search-container{
   padding-top: 80px;
   width: 100%;
@@ -212,6 +208,45 @@ header button.cancelbtn{
 .source img{
   width: 200px;
   height: 200px;
+}
+/* 筛选栏按钮样式 */
+.container .filter{
+  text-align: left;
+  padding: 16px;
+  display: flex;
+}
+.container .filter button{
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+	padding: 6px 12px;
+	font-size: 0.875em;
+  cursor: pointer;
+  color: rgb(72, 72, 72);
+  transition: 0.4s;
+}
+.container .filter button:hover{
+  background-color: rgb(221, 221, 221);
+}
+
+/* 房源界面样式 */
+.main{
+  border-top: 1px solid rgb(175, 175, 175);
+}
+
+/* 房源下拉菜单测试 */
+.menu{
+  background-color: #fff;
+  border: 1px solid rgb(72, 72, 72);
+  top: 150px;
+  left: 180px;
+  position: absolute;
+  display: none;
+  padding: 24px;
 }
 
 
