@@ -1,11 +1,3 @@
-var model = document.getElementById('regModel');
-
-window.onclick = function(event){
-  if(event.target == model){
-    model.style.display = 'none';
-  }
-}
-
 function showReg(){
   document.getElementById('regmodel').style.display='block';
 }
