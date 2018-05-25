@@ -9,7 +9,7 @@ function hide(){
   document.getElementById('logModel').style.display='none';
 }
 
-var model = document.getElementById('RegLogmodel');
+var model = document.getElementById('regModel');
 
 window.onclick = function(event){
   if(event.target == model){
