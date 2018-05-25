@@ -17,7 +17,7 @@ html
 
         each item in header
           button(onclick=item.onclick) #{item.name}
-      .RegLog#regModel
+      .reglog#regmodel
         span.close(onclick='hide()') ×
         form.model-content
           .register
@@ -33,7 +33,7 @@ html
             .clearfix
               button.cancelbtn 取消
               button.signupbtn 注册
-      .RegLog#logModel
+      .reglog#logmodel
         span.close(onclick='hide()') ×
         form.model-content
           .login
@@ -46,6 +46,8 @@ html
             .clearfix
               button.cancelbtn 取消
               button.signupbtn 登录
+    //- 让js脚本最后加载
+    script(src='/javascripts/main.js')          
     .container
       block content
-
+  
