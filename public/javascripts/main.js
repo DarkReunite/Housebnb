@@ -1,18 +1,15 @@
 function showReg(){
-  document.getElementById('regModel').style.display='block';
+  document.getElementById('regmodel').style.display='block';
 }
+
 function showLog(){
-  document.getElementById('logModel').style.display='block';
-}
-function hide(){
-  document.getElementById('regModel').style.display='none';
-  document.getElementById('logModel').style.display='none';
+  document.getElementById('logmodel').style.display='block';
 }
 
-var model = document.getElementById('RegLogmodel');
-
-window.onclick = function(event){
-  if(event.target == model){
-    model.style.display = 'none';
-  }
+function hide() {
+  document.getElementById('regmodel').style.display="none";
+  document.getElementById('logmodel').style.display="none";
 }
+
+document.getElementById('regmodel').onclick = hide;
+document.getElementById('logmodel').onclick = hide;
