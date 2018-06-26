@@ -1,0 +1,24 @@
+.reglog#regmodel
+  .reglog-content 
+    .close
+      button(onclick='hide()') ×
+    section
+      .title
+        span 手机号注册
+      .to-log
+        span 已有账号？ 
+        span 
+          a(href="/") 登录
+      .form-content
+        form(action="/register" method="post")
+          .input-content
+            input(type="text" placeholder="手机号" name="phonenum")
+          .input-content
+            input(type="text" placeholder="用户名" name="username")
+          .input-content
+            input(type="password" placeholder="设置密码" name="password")
+          .input-content
+            input(type="password" placeholder="重复密码" name="repeatpassword")
+          .input-submit
+            input(type="submit" value="注册")
+    

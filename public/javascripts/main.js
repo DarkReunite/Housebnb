@@ -6,7 +6,7 @@ function showLog(){
   document.getElementById('logmodel').style.display='block';
 }
 function showMenu(){
-  document.getElementById('source').style.display='block'
+  document.getElementById('source').style.display='block';
 }
 
 function hide() {
@@ -14,8 +14,8 @@ function hide() {
   document.getElementById('logmodel').style.display="none";
 }
 
-document.getElementById('regmodel').onclick = hide;
-document.getElementById('logmodel').onclick = hide;
+// document.getElementById('regmodel').onclick = hide;
+// document.getElementById('logmodel').onclick = hide;
 
 /* 上传图片 未完成*/
 // console.log("1");

@@ -7,13 +7,22 @@
 var app = require('../app');
 var debug = require('debug')('housebnb:server');
 var http = require('http');
-
+var mongo = require('../model_mongo/db');
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+
+//启动mongodb数据库
+
+mongo.connectToServer(function (err) {
+  if (err) throw err;  
+});
+
+
 
 /**
  * Create HTTP server.

@@ -9,44 +9,25 @@ html
   body
     header
       nav
-        -
-          var header = [
-            {name:"发布房源",link:'/',onclick:'show()'},
-            {name:"注册",link:'/',onclick:'showReg()'},
-            {name:"登录",link:'/',onclick:'showLog()'}
-          ]
+        if !user
+          -
+            var header = [
+              {name:"发布房源",link:'/publish'},
+              {name:"注册",link:'/',onclick:'showReg()'},
+              {name:"登录",link:'/',onclick:'showLog()'}
+            ]
 
-        each item in header
-          button(onclick=item.onclick) #{item.name}
-      .reglog#regmodel
-        span.close(onclick='hide()') ×
-        form.model-content
-          .register
-            label(for="email")
-              b 邮箱
-            input(type='text' placeholder='请输入你的邮箱' name='email' required)
-            label
-              b 密码
-            input(type='password' placeholder='请输入你的密码' name='psw' required)
-            label
-              b 确认密码
-            input(type='password' placeholder='重复输入密码' name='psw-repeat' required)
-            .clearfix
-              button.cancelbtn 取消
-              button.signupbtn 注册
-      .reglog#logmodel
-        span.close(onclick='hide()') ×
-        form.model-content
-          .login
-            label(for="email")
-              b 邮箱
-            input(type='text' placeholder='请输入你的邮箱' name='email' required)
-            label
-              b 密码
-            input(type='password' placeholder='请输入你的密码' name='psw' required)
-            .clearfix
-              button.cancelbtn 取消
-              button.signupbtn 登录
+          each item in header
+            button(onclick=item.onclick) #{item.name}
+        else
+          button 发布房源
+          button 你好! #{user}
+          a(href="/logout")
+            button  注销
+             
+              
+      include register.pug
+      include login.pug
     //-  让js脚本最后加载就能用了
     script(src='/javascripts/main.js')          
     .container

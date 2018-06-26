@@ -1,0 +1,19 @@
+.reglog#logmodel
+  .reglog-content
+    .close
+      button(onclick='hide()') ×
+    section
+      .title
+        span 登录Housebnb
+      .to-log
+        span 还没有账号？ 
+        span 
+          a(href="/") 注册
+      .form-content
+        form(action="/login" method="post")
+          .input-content
+            input(type="text" placeholder="手机号" name="phonenum")
+          .input-content
+            input(type="password" placeholder="密码" name="password")
+          .input-submit
+            input(type="submit" value="登陆")

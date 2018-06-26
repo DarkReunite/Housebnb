@@ -4,6 +4,11 @@
   font: 100% "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+a{
+  text-decoration: none;
+  color:gray;
+}
+
 header{
   width: 100%;
   padding: 1px;
@@ -16,6 +21,7 @@ header nav {
 
 /* 导航栏按钮样式 */
 header nav button{
+  line-height: 1.5;
   border: none;
 	position: relative;
 	padding: 30px;
@@ -47,29 +53,17 @@ header nav button:hover ~ button::before{
   left: 0;
 }
 
-/* 注册的整个div样式 */
-header .reglog{
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding-top: 60px;
-}
+
 
 /* 关闭图标 */
-header .close{
+/* header .close{
   position: absolute;
   right: 35px;
   top: 15px;
   color: black;
   font-size: 2.5em;
   font-weight: bold;
-}
+} */
 
 
 header .close:hover, header.close:focus{
@@ -78,6 +72,7 @@ header .close:hover, header.close:focus{
 }
 
 /* 弹出的注册框和登录框样式 */
+
 header .model-content{
   background-color: #fefefe;
   margin:  5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
@@ -85,9 +80,7 @@ header .model-content{
   width: 40%;
 }
 
-header .register,header .login{
-  padding: 16px;
-}
+
 
 header input[type=text], header input[type=password] {
   width: 100%;
@@ -100,7 +93,7 @@ header input[type=text], header input[type=password] {
 
 
 /* 设置注册每个按钮的样式 */
-header .reglog button {
+/* header .reglog button {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -112,7 +105,9 @@ header .reglog button {
 header .cancelbtn, header .signupbtn {
   float:left;
   width:50%;
-}
+} */
+
+
 
 header .clearfix::after{
   content: "";
@@ -305,14 +300,101 @@ header button.cancelbtn{
 
 
 
+/* 注册的整个div样式 */
+.reglog{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* 注册的页面样式 */
+.reglog .reglog-content {
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 200px;
+
+  background-color: white;
+  max-width: 500px;
+}
+
+.reglog-content .close{
+  float: right;
+
+}
+
+.reglog-content .close button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.6em;
+}
+
+.reglog-content section .title{
+  margin-bottom: 5px;
+}
+.reglog-content section .title span{
+  font-size: 1.5em;
+
+}
+
+.reglog-content section input{
+  border-radius: 1px;
+}
+
+
+
+
+section .form-content{
+  margin-top: 20px;
+}
+
+section .check-info{
+  padding: 2px 0px;
+  vertical-align: middle;
+}
+
+section .input-submit input{
+  margin-top: 30px;
+  padding: 15px;
+  color: white;
+  background-color:rgb(255, 79, 85);
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 700px){
   header .cancelbtn, header .signupbtn {
     width: 100%;
   }
 
-  header .model-content{
-    width: 90%;
+  .reglog .reglog-content {
+    margin: 0px 0px;
+    max-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reglog{
+    padding:0px;
   }
 }
 
