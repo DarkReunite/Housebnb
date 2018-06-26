@@ -254,6 +254,56 @@ header button.cancelbtn{
   padding: 24px;
 }
 
+/* 发布房源 */
+.house_info{
+  padding-left: 100px;
+}
+
+
+.pub_title p{
+  margin: 20px;
+  font-size: 32px;
+  color: #282828;
+}
+/* 筛选栏 */
+.step1{
+  margin: 20px;
+}
+.step1 select{
+  padding: 8px;
+  padding-right: 2em;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.step1 ul{
+  list-style: none;
+}
+.step1 ul li{
+  margin: 10px 0px;
+}
+/* 图片上传 */
+.step2{
+  margin: 20px;
+}
+.step2 #img_input{
+  display: none;
+}
+.step2 #img_label{
+  background-color: #ff5a5f;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}
+.step2 #preview_box img{
+  width: 200px;
+}
+/* 价格设置 */
+.step3{
+  margin: 20px;
+}
+
+
 
 
 @media screen and (max-width: 700px){
