@@ -1,0 +1,70 @@
+extends layout.pug
+
+block content
+    form.house_info
+        .pub_title
+            p 您好，请开始发布您的房源
+        .step1
+            p 步骤1
+            select(name="room_type")
+                option(value="entire_home") 整个房源 
+                option(value="private_room") 独立房间
+                option(value="share_room") 合住房间
+            select(name="tenant_num")
+                option(value="one")  1位房客
+                option(value="two") 2位房客
+                option(value="three") 3位房客
+            select(name="province")
+                option(value="gd") 广东省
+            select(name="city")
+                option(value="meizhou") 梅州市
+            p
+                input(name="address" placeholder="请输入房源的详细地址")
+            ul
+                li
+                    p 便利设施
+                li
+                    input(type="checkbox" name="convenient" value="电视")
+                    | 电视
+                li
+                    input(type="checkbox" name="convenient" value="暖气") 
+                    | 暖气
+                li
+                    input(type="checkbox" name="convenient" value="空调") 
+                    | 空调
+                li
+                    input(type="checkbox" name="convenient" value="网络") 
+                    | 网络
+        .step2
+            p 步骤2
+            input(type="file" id="img_input" accept="image/*")
+            label(for="img_input" id="img_label") 选择文件
+            #preview_box
+        .step3
+            p 步骤3
+            p
+                span 请选择租赁的日期：
+                input(type="date")
+                | ——
+                input(type="date")
+            p
+                span 请选择租赁的价格：
+                input(type="text" placeholder="请输入价格")
+    script.
+        console.log("1");
+        $("#img_input").on("change", function(e){
+          console.log("2");
+          var file = e.target.files[0];
+
+          if(!file.type.match('image.*')){
+            return false;
+          }
+
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(arg){
+          var img = '<img class="preview" src="' + arg.target.result + '"alt="preview"/>';
+          $("#preview_box").empty().append(img);
+        }
+        });
+        
