@@ -9,7 +9,8 @@
       "type": "node",
       "request": "launch",
       "name": "启动程序",
-      "program": "${workspaceFolder}\\bin\\www"
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/bin/www"
     }
   ]
 }
