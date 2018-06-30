@@ -1,70 +1,116 @@
-extends layout.pug
+extends layout
 
 block content
-    form.house_info
-        .pub_title
-            p 您好，请开始发布您的房源
-        .step1
-            p 步骤1
-            select(name="room_type")
-                option(value="entire_home") 整个房源 
-                option(value="private_room") 独立房间
-                option(value="share_room") 合住房间
-            select(name="tenant_num")
-                option(value="one")  1位房客
-                option(value="two") 2位房客
-                option(value="three") 3位房客
-            select(name="province")
-                option(value="gd") 广东省
-            select(name="city")
-                option(value="meizhou") 梅州市
-            p
-                input(name="address" placeholder="请输入房源的详细地址")
-            ul
-                li
-                    p 便利设施
-                li
-                    input(type="checkbox" name="convenient" value="电视")
-                    | 电视
-                li
-                    input(type="checkbox" name="convenient" value="暖气") 
-                    | 暖气
-                li
-                    input(type="checkbox" name="convenient" value="空调") 
-                    | 空调
-                li
-                    input(type="checkbox" name="convenient" value="网络") 
-                    | 网络
-        .step2
-            p 步骤2
-            input(type="file" id="img_input" accept="image/*")
-            label(for="img_input" id="img_label") 选择文件
-            #preview_box
-        .step3
-            p 步骤3
-            p
-                span 请选择租赁的日期：
-                input(type="date")
-                | ——
-                input(type="date")
-            p
-                span 请选择租赁的价格：
-                input(type="text" placeholder="请输入价格")
-    script.
-        console.log("1");
-        $("#img_input").on("change", function(e){
-          console.log("2");
-          var file = e.target.files[0];
+  .pub-container
+    form(action="/publish" method="post" enctype="multipart/form-data") 
+      .pub_title
+        h1 您好，请开始发布您的房源
+      .pub-content
+        h2 房屋信息
+        .house-info
+          table
+            tr 
+              td 
+                span 房源名称:
+              td
+                input(type="text" name="houseName" required)
+            tr
+              td 
+                span 卧室:
+              td 
+                span
+                  select(name="bedroom")
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                span 间
+              td
+                span 床:
+              td
+                span 
+                  select(name="bed") 
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                span 张
+            tr
+              td 
+                span 卫生间:
+              td 
+                span
+                  select(name="restroom")
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                span 间
+              td
+                span 可住人数:
+              td
+                span 
+                  select(name="liveIn") 
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                span 人
+            tr
+              td
+                span 地址:
+              td
+                span
+                  select(name="province")
+                    option(value="guangdong") 广东省
+                  select(name="city")
+                    option(value="meizhou") 梅州市
+                  select(name="area")
+                    option(value="meijiang") 梅江区
+            tr
+              td
+                span 详细地址:
+              td
+                input(type="text" name="address" required)
+            tr
+              td 
+                span 房屋图片:
+              td
+                input(type="file" name="imageFile" required)
 
-          if(!file.type.match('image.*')){
-            return false;
-          }
-
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function(arg){
-          var img = '<img class="preview" src="' + arg.target.result + '"alt="preview"/>';
-          $("#preview_box").empty().append(img);
-        }
-        });
-        
+        h2 提供的便利设施
+        .house-offer
+          table
+              tr
+                td
+                  span 无线局域网
+                  input(type="checkbox" name="WIFI")
+                td
+                  span 免费停车位
+                  input(type="checkbox" name="park")
+                td
+                  span 电视机
+                  input(type="checkbox" name="TV")
+              tr
+                td
+                  span 空调
+                  input(type="checkbox" name="aircon")
+                td
+                  span 洗衣机
+                  input(type="checkbox" name="washer")
+                td
+                  span 吹风机
+                  input(type="checkbox" name="blower")
+              tr
+                td
+                  span 洗漱用品
+                  input(type="checkbox" name="toiletries")
+                td
+                  span 暖气
+                  input(type="checkbox" name="heating")
+                td
+                  span 衣架
+                  input(type="checkbox" name="hanger")
+        h2 租赁信息
+        .house-rent
+          span 租赁价格:
+          input(type="text" name="price" required)
+          span 元/月
+      .pub-submit
+        input(type="submit" value="发布" )

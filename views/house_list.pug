@@ -4,14 +4,14 @@ block content
     .filter
       -
         var filter = [
-          {name:'入住-退房',onclick:'showMenu()'},
-          {name:'房客',onclick:'showMenu()'},
-          {name:'房源类型',onclick:'showMenu()'},
-          {name:'价格',onclick:'showMenu()'},
-          {name:'闪订',onclick:'showMenu()'},
-          {name:'路程类型',onclick:'showMenu()'},
-          {name:'位置区域',onclick:'showMenu()'},
-          {name:'更多筛选条件',onclick:'showMenu()'}
+          { name:'入住-退房',onclick:'showMenu()'},
+          { name:'房客',onclick:'showMenu()'},
+          { name:'房源类型',onclick:'showMenu()'},
+          { name:'价格',onclick:'showMenu()'},
+          { name:'闪订',onclick:'showMenu()'},
+          { name:'路程类型',onclick:'showMenu()'},
+          { name:'位置区域',onclick:'showMenu()'},
+          { name:'更多筛选条件',onclick:'showMenu()'}
         ]
       each item in filter
         .nav
@@ -21,76 +21,15 @@ block content
         //-   button 一室一厅
         //-   button 两室一厅
         //-   button 两室两厅
-    .main
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
-      .source
-        img(src='/images/pic.jpg')
-        .name 两房一厅
+    .house-list
+      - var house = houselist
+      each item in house
+        - var houseurl = "/house_detail/" + item.housename
+        .house-content
+          .house-img
+            a(href=houseurl)
+              img(src=item.imgpath, alt="")
+          .house-name
+            a(href="/")
+              p.name #{item.housename}
+    

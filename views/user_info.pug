@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+    .user_info
+        .left_info
+            .info_img
+                img(src="/images/pic.jpg")
+            .info_verify
+                .verify_header
+                    p 已验证的信息
+                .verify_body
+                    ul
+                        li
+                            p 电子邮件地址
+                        li
+                            p 手机号
+        .right_info
+            .info_title
+                p wang
+            .info_time
+                p 注册时间：2018年6月
+            .info_record
+                p 发布过的房源
+                ul
+                   each item in houselist
+                    li
+                      img(src="/images/pic.jpg", alt="")
+                      p #{item.houseName}

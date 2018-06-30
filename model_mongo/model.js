@@ -28,6 +28,7 @@ module.exports = {
     
   },
 
+  //登陆功能
   findAccount: function (account, callback) {
     var mydb = mongo.getDb().db(mongodb.accountDB);
     mydb.collection(mongodb.accountDB).find({'phonenum':account.phonenum,'password':account.password}).toArray(function (err, docs) {
@@ -38,7 +39,37 @@ module.exports = {
         
       
     });
-  }
+  },
 
+  //将房源信息保存到数据库中
+  saveHouse: function (house_info, callback) {
+    var mydb = mongo.getDb().db(mongodb.houseDB);
+    mydb.collection(mongodb.houseDB).insertOne(house_info, function (err, result) {
+      if (err) throw err;
+      console.log("success to save the house_info");
+      callback(result);
+      
+    });
+  },
+
+  findAllHouse: function (phonenum,callback) {
+    var mydb = mongo.getDb().db(mongodb.houseDB);
+    console.log(phonenum);
+    
+    mydb.collection(mongodb.houseDB).find({'ownerAccount':phonenum}).toArray(function (err, data) {
+      if (err) throw err;
+
+      callback(data);
+    });
+  },
+
+  findOneHouse: function (house_info,callback) {
+    var mydb = mongo.getDb().db(mongodb.houseDB);
+    mydb.collection(mongodb.houseDB).find({'ownerAccount':house_info.ownerAccount,'houseName':house_info.houseName}).toArray(function (err, data) {
+      if (err) throw err;
+
+      callback(data);
+    });
+  }
 
 };

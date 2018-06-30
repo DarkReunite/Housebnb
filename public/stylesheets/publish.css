@@ -1,0 +1,65 @@
+
+
+.pub-container{
+  padding: 50px;
+}
+
+td{
+  padding: 10px 0px;
+  padding-right: 3px;
+  text-align: right;
+}
+
+
+.house-info td:nth-child(even){
+  text-align: left;
+}
+
+
+select{
+  margin-right: 5px;
+}
+
+
+h2{
+  margin-top: 50px;
+}
+
+.house-info, .house-offer, .house-rent{
+  padding: 20px;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+
+.house-offer tr{
+  border-bottom: 1px solid gray;
+}
+
+.house-offer tr:last-child{
+  border:none;
+}
+
+
+.house-offer td span {
+  margin-right: 3px;
+}
+
+.house-rent input{
+  margin: 0 3px;
+}
+
+.pub-submit{
+  padding: 20px;
+  text-align: center;
+}
+.pub-submit input{
+  font-size: 1.3em;
+  border: none;
+  color: white;
+  background-color:rgb(255, 79, 85);;
+  border-radius: 5px;
+  padding: 15px;
+  width: 200px;
+  cursor: pointer;
+}
+

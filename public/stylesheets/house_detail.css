@@ -1,0 +1,198 @@
+/* 房源详情界面 */
+.details_container{
+  flex-wrap: wrap;
+}
+/*轮播栏*/
+.main{
+width:100%;
+min-width: 1200px;
+}
+
+.main .swipe{
+width: 100%;
+height: auto;
+margin: auto auto;
+position: relative;
+}
+.swipe .swiper-container1{
+width:100%;
+}
+
+.picture{
+  width: 100%;
+}
+
+.picture img{
+  width: 100%;
+}
+.swipe img{
+display:block;
+width:100%;
+}
+/*分页器*/
+.pagination {
+position: absolute;
+ z-index: 20;
+ bottom: 10px;
+ width: 100%;
+ text-align: center;
+}
+.swiper-pagination-switch {
+display: inline-block;
+width: 12px;
+height: 12px;
+border-radius: 12px;
+background: #fff;
+margin: 0 5px;
+opacity: 0.8;
+cursor: pointer;
+}
+.swiper-active-switch {
+background: #ff5a5f;
+}
+
+.swiper-container {
+margin:0 auto;
+position:relative;
+overflow:hidden;
+-webkit-backface-visibility:hidden;
+-moz-backface-visibility:hidden;
+-ms-backface-visibility:hidden;
+-o-backface-visibility:hidden;
+backface-visibility:hidden;
+/* Fix of Webkit flickering */
+z-index:1;
+}
+.swiper-wrapper {
+position:relative;
+width:100%;
+-webkit-transition-property:-webkit-transform, left, top;
+-webkit-transition-duration:0s;
+-webkit-transform:translate3d(0px,0,0);
+-webkit-transition-timing-function:ease;
+
+-moz-transition-property:-moz-transform, left, top;
+-moz-transition-duration:0s;
+-moz-transform:translate3d(0px,0,0);
+-moz-transition-timing-function:ease;
+
+-o-transition-property:-o-transform, left, top;
+-o-transition-duration:0s;
+-o-transform:translate3d(0px,0,0);
+-o-transition-timing-function:ease;
+-o-transform:translate(0px,0px);
+
+-ms-transition-property:-ms-transform, left, top;
+-ms-transition-duration:0s;
+-ms-transform:translate3d(0px,0,0);
+-ms-transition-timing-function:ease;
+
+transition-property:transform, left, top;
+transition-duration:0s;
+transform:translate3d(0px,0,0);
+transition-timing-function:ease;
+}
+.swiper-free-mode > .swiper-wrapper {
+-webkit-transition-timing-function: ease-out;
+-moz-transition-timing-function: ease-out;
+-ms-transition-timing-function: ease-out;
+-o-transition-timing-function: ease-out;
+transition-timing-function: ease-out;
+margin: 0 auto;
+}
+.swiper-slide {
+float: left;
+}
+
+.infor{
+  width:1200px;
+  margin: auto auto;
+}
+
+.info{
+  float: left;
+  width: 50%;
+  margin: 0px 30px;
+}
+.info .house_title p{
+  padding: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #282828;
+  border-bottom: #dbdbdb 1px solid;
+}
+.info .room,.info .room_type,.info .time,.info .convenient{
+  padding: 20px;
+  border-bottom: #dbdbdb 1px solid;
+}
+.info .room span,.info .room_type span,.info .time span,.info .convenient span{
+  padding-right:25px; 
+}
+.landlord{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.landlord .landlord_info{
+  display: inline-block;
+  padding: 8px 0px;
+  margin-left: 16px;
+  height: 100%;
+}
+.landlord .landlord_info a{
+  color: rgb(0,132,137);
+  text-decoration: none;
+  font-weight: bold;
+}
+.landlord .round_icon{
+  display: inline-flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.landlord .round_icon img{
+  width: 64px;
+  height: 64px;
+}
+
+/* 预定窗口 */
+.book{
+  width: 40%;
+  border: #dbdbdb 1px solid;
+  margin: 20px;
+  float: left;
+}
+.book .price,.book .date,.book .number{
+  padding: 20px;
+  border-bottom: #dbdbdb 1px solid;
+}
+.book p{
+  font-weight: bold;
+}
+.book .number select{
+  border: #dbdbdb 1px solid;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+}
+.date .date_input{
+  padding: 8px;
+  border: #dbdbdb 1px solid;
+}
+.date .date_input input{
+  border: none;
+}
+.book .btn_book{
+  padding: 20px;
+}
+.book .btn_book button{
+  background-color: rgb(255,90,95);
+  padding: 12px 24px;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}

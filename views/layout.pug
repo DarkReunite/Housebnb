@@ -3,29 +3,38 @@ html
   head
     title=title
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/stylesheets/publish.css")
+    link(rel="stylesheet", href="/stylesheets/house_detail.css")
+    link(rel="stylesheet", href="/stylesheets/user_info.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     srcipt(src="/javascripts/jquery-3.3.1.js")
     script(src="/javascripts/jquery-3.3.1.min.js")
   body
     header
       nav
-        if !user
-          -
-            var header = [
-              {name:"发布房源",link:'/publish'},
-              {name:"注册",link:'/',onclick:'showReg()'},
-              {name:"登录",link:'/',onclick:'showLog()'}
-            ]
-
-          each item in header
-            button(onclick=item.onclick) #{item.name}
-        else
-          button 发布房源
-          button 你好! #{user}
-          a(href="/logout")
-            button  注销
-             
-              
+        .logo
+          a(href="/")
+            img(src="/images/logo.jpg", alt="")
+        .nav-bar
+          if !usersession
+            -
+              var header = [
+                {name:"发布房源",link:'/publish'},
+                {name:"注册",link:'/',onclick:'showReg()'},
+                {name:"登录",link:'/',onclick:'showLog()'}
+              ]
+  
+            each item in header
+              button(onclick=item.onclick) #{item.name}
+          else
+            a(href="/publish")
+              button 发布房源
+            a(href="/user_info")
+              button  #{usersession}
+            a(href="/logout")
+              button  注销
+               
+                
       include register.pug
       include login.pug
     //-  让js脚本最后加载就能用了

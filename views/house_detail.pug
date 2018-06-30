@@ -1,0 +1,68 @@
+extends layout.pug
+
+block content
+    .details_container
+      each item in houseinfo
+        .picture
+            img(src="/images/user/110/402/Brave Song.jpg")
+        .info
+            .house_title
+                p #{item.houseName}
+            .room
+                p
+                  span #{item.bedroom}间卧室
+                  span #{item.bed}张床
+                  span #{item.restroom}间卫生间
+                  span #{item.liveIn}最多住2人
+            .room_type
+                p
+                  span 出租类型
+                  span 整套公寓
+            .time
+              p
+                span 入住/退房
+                span 入住时间15:00后·退房时间12:00
+            .convenient
+              p
+                if item.house_offer.WIFI
+                  span 无线网络
+                if item.house_offer.park
+                  span 无线网络
+                if item.house_offer.TV
+                  span 电视
+                if item.house_offer.aircon
+                  span 空调
+                if item.house_offer.washer
+                  span 洗衣机
+                if item.house_offer.blower
+                  span 吹风机
+                if item.house_offer.toiletries
+                  span 洗漱用品
+                if item.house_offer.heating
+                  span 暖气
+                if item.house_offer.hanger
+                  span 衣架
+            .landlord
+              .round_icon
+                img(src="/images/pic.jpg")
+              .landlord_info
+                p 房东手机号：#{item.ownerAccount}
+                a(href="http://www.baidu.com") 联系房东
+        .book
+            .price
+                p ￥#{item.price} 每月
+            .date
+                p 日期
+                .date_input
+                    input(type="date")
+                    | →
+                    input(type="date")
+            .number
+                p 房客
+                select(name="number")
+                    option(value="one") 1位房客
+                    option(value="two") 2位房客
+                    option(value="three") 3位房客
+            .btn_book
+                button(type="submit") 预订
+                
